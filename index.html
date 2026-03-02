@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Ignacio Recabarren | Full Stack Developer</title>
+    <title>Ignacio Recabarren | Senior Full Stack Developer</title>
     <meta
       name="description"
-      content="Ignacio Recabarren - Semi-Senior Full Stack Developer"
+      content="Senior Full Stack Developer specialized in Angular, TypeScript and scalable enterprise web applications."
     />
 
     <link
@@ -16,6 +16,23 @@
     />
 
     <style>
+      :root {
+        --bg: #ffffff;
+        --text: #0f172a;
+        --secondary: #64748b;
+        --card: #f8fafc;
+        --border: #e2e8f0;
+        --accent: linear-gradient(135deg, #6366f1, #06b6d4);
+      }
+
+      body.dark {
+        --bg: #0b0f19;
+        --text: #f1f5f9;
+        --secondary: #94a3b8;
+        --card: #111827;
+        --border: #1f2937;
+      }
+
       * {
         margin: 0;
         padding: 0;
@@ -26,330 +43,402 @@
       }
       body {
         font-family: "Inter", sans-serif;
-        background: #fff;
-        color: #111;
+        background: var(--bg);
+        color: var(--text);
+        transition: all 0.4s ease;
         -webkit-font-smoothing: antialiased;
       }
-      section {
-        padding: 160px 10%;
-        position: relative;
-      }
+
+      /* NAV */
+
       nav {
         position: fixed;
-        top: 0;
         width: 100%;
-        background: rgba(255, 255, 255, 0.8);
+        top: 0;
         backdrop-filter: blur(20px);
+        background: rgba(255, 255, 255, 0.6);
         display: flex;
         justify-content: space-between;
-        padding: 20px 10%;
+        align-items: center;
+        padding: 20px 40px;
         z-index: 1000;
+        transition: 0.3s ease;
+        border-bottom: 1px solid var(--border);
       }
+
+      body.dark nav {
+        background: rgba(10, 15, 25, 0.6);
+      }
+
+      nav.scrolled {
+        padding: 14px 40px;
+      }
+
       nav a {
         text-decoration: none;
-        color: #111;
-        margin-left: 40px;
+        color: var(--text);
+        margin-left: 30px;
         font-weight: 500;
         font-size: 14px;
-        letter-spacing: 0.5px;
         transition: 0.3s;
       }
       nav a:hover {
-        opacity: 0.5;
+        opacity: 0.6;
       }
-      .hero {
-        height: 100vh;
+
+      .nav-right {
         display: flex;
         align-items: center;
-        justify-content: space-between;
       }
-      .hero-left {
-        max-width: 650px;
+
+      #themeToggle {
+        margin-left: 25px;
+        cursor: pointer;
+        background: none;
+        border: none;
+        font-size: 18px;
+        color: var(--text);
       }
-      .hero h1 {
-        font-size: 80px;
-        font-weight: 800;
-        line-height: 1.1;
-      }
-      .hero h2 {
-        font-size: 28px;
-        font-weight: 500;
-        margin-top: 30px;
-        color: #666;
-      }
-      .hero p {
-        margin-top: 30px;
-        font-size: 20px;
-        color: #777;
-        line-height: 1.6;
-      }
-      .hero-image {
-        width: 380px;
-        height: 480px;
-        background: #f5f5f7;
-        border-radius: 30px;
+
+      /* HERO */
+
+      .hero {
+        min-height: 100vh;
         display: flex;
         align-items: center;
         justify-content: center;
-        font-size: 14px;
-        color: #aaa;
-        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
-        overflow: hidden;
+        padding: 0 20px;
       }
-      .section-title {
-        font-size: 48px;
-        font-weight: 700;
-        margin-bottom: 80px;
-        text-align: center;
+
+      .hero-container {
+        max-width: 1200px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        gap: 100px;
+        flex-wrap: wrap;
       }
-      .about p {
-        max-width: 950px;
-        margin: auto;
-        font-size: 22px;
-        line-height: 1.8;
-        color: #444;
-        text-align: center;
+
+      .hero-left {
+        flex: 1;
+        min-width: 300px;
       }
-      .experience-item {
-        max-width: 850px;
-        margin: 0 auto 120px auto;
+
+      .hero h1 {
+        font-size: clamp(40px, 6vw, 72px);
+        font-weight: 900;
+        line-height: 1.05;
+        background: var(--accent);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
       }
-      .experience-item h3 {
-        font-size: 26px;
-        font-weight: 600;
+
+      .hero h2 {
+        font-size: clamp(18px, 2vw, 24px);
+        margin-top: 25px;
+        color: var(--secondary);
       }
-      .experience-item span {
-        display: block;
-        margin: 15px 0;
-        color: #888;
-      }
-      .experience-item p {
+
+      .hero p {
+        margin-top: 25px;
         font-size: 18px;
-        color: #555;
+        line-height: 1.7;
+        color: var(--secondary);
+      }
+
+      .cta {
+        margin-top: 40px;
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-weight: 600;
+        font-size: 14px;
+        cursor: pointer;
+        transition: 0.3s ease;
+        text-decoration: none;
+      }
+
+      .btn-primary {
+        background: var(--accent);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+      }
+
+      .btn-outline {
+        border: 1px solid var(--border);
+        color: var(--text);
+      }
+
+      .btn-outline:hover {
+        background: var(--card);
+      }
+
+      /* IMAGE */
+
+      .hero-image {
+        flex: 1;
+        min-width: 260px;
+        max-width: 400px;
+        aspect-ratio: 4/5;
+        border-radius: 30px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .hero-image::before {
+        content: "";
+        position: absolute;
+        inset: -2px;
+        background: var(--accent);
+        filter: blur(40px);
+        z-index: -1;
+        opacity: 0.4;
+      }
+
+      .hero-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 30px;
+      }
+
+      /* SECTIONS */
+
+      section {
+        padding: 140px 20px;
+        display: flex;
+        justify-content: center;
+      }
+
+      .section-inner {
+        max-width: 1000px;
+        width: 100%;
+      }
+
+      .section-title {
+        font-size: 40px;
+        font-weight: 800;
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-text {
+        text-align: center;
+        color: var(--secondary);
+        font-size: 18px;
         line-height: 1.8;
       }
-      .skills-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 25px;
-        max-width: 1000px;
-        margin: auto;
+
+      /* EXPERIENCE CARDS */
+
+      .card {
+        background: var(--card);
+        padding: 40px;
+        border-radius: 25px;
+        margin-bottom: 40px;
+        transition: 0.3s ease;
+        border: 1px solid var(--border);
       }
+
+      .card:hover {
+        transform: translateY(-8px);
+      }
+
+      .card h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+      }
+
+      .card span {
+        color: var(--secondary);
+        font-size: 14px;
+      }
+
+      .card p {
+        margin-top: 15px;
+        color: var(--secondary);
+        line-height: 1.7;
+      }
+
+      /* SKILLS */
+
+      .skills {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 20px;
+      }
+
       .skill {
-        background: #f5f5f7;
-        padding: 30px;
+        background: var(--card);
+        padding: 20px;
+        border-radius: 15px;
         text-align: center;
-        border-radius: 20px;
         font-weight: 500;
-        transition: 0.4s ease;
+        border: 1px solid var(--border);
+        transition: 0.3s ease;
       }
       .skill:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+        transform: translateY(-5px);
       }
-      .education,
-      .languages {
-        max-width: 800px;
-        margin: auto;
-        text-align: center;
-      }
-      .education p,
-      .languages p {
-        font-size: 20px;
-        color: #555;
-        margin: 15px 0;
-      }
-      .contact {
-        text-align: center;
-      }
-      .contact p {
-        font-size: 20px;
-        margin: 15px 0;
-        color: #555;
-      }
-      .contact a {
-        display: inline-block;
-        margin: 20px 20px 0 20px;
-        text-decoration: none;
-        font-weight: 600;
-        color: #111;
-        border-bottom: 1px solid #ccc;
-        transition: 0.3s;
-      }
-      .contact a:hover {
-        border-bottom: 1px solid #111;
-      }
+
+      /* FOOTER */
+
       footer {
         text-align: center;
         padding: 80px 0;
-        color: #aaa;
-        font-size: 14px;
+        color: var(--secondary);
       }
+
+      /* ANIMATION */
+
       .reveal {
         opacity: 0;
-        transform: translateY(60px);
-        transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        transform: translateY(40px);
+        transition: 1s ease;
       }
       .reveal.active {
         opacity: 1;
         transform: translateY(0);
       }
+
+      /* MOBILE */
+
+      @media (max-width: 900px) {
+        .hero-container {
+          flex-direction: column-reverse;
+          text-align: center;
+          gap: 60px;
+        }
+        nav a {
+          display: none;
+        }
+      }
     </style>
   </head>
 
   <body>
-    <nav>
+    <nav id="navbar">
       <div><strong>IR</strong></div>
-      <div>
+      <div class="nav-right">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
         <a href="#skills">Skills</a>
-        <a href="#education">Education</a>
         <a href="#contact">Contact</a>
+        <button id="themeToggle">🌙</button>
       </div>
     </nav>
 
     <section class="hero">
-      <div class="hero-left">
-        <h1>Ignacio Recabarren</h1>
-        <h2>SemiSenior Full Stack Developer</h2>
-        <p>
-          I build scalable, maintainable and high-performance web applications
-          with over 8 years of professional experience. Specialized in Angular, React
-          and TypeScript, with strong backend foundations in Java and .NET.
-          Focused on clean architecture, modular design and long-term product
-          scalability.
-        </p>
-      </div>
-
-      <div class="hero-image">
-        <img
-          src="profile.jpeg"
-          style="width: 100%; height: 100%; object-fit: cover"
-        />
+      <div class="hero-container">
+        <div class="hero-left">
+          <h1>Ignacio Recabarren</h1>
+          <h2>Senior Full Stack Developer — Angular Specialist</h2>
+          <p>
+            I build scalable, maintainable and high-performance web
+            applications. 8+ years delivering enterprise solutions with Angular,
+            TypeScript and modern backend ecosystems.
+          </p>
+          <div class="cta">
+            <a href="#contact" class="btn btn-primary">Contact Me</a>
+            <a
+              href="https://github.com/nachoreca"
+              target="_blank"
+              class="btn btn-outline"
+              >View GitHub</a
+            >
+          </div>
+        </div>
+        <div class="hero-image">
+          <img src="./profile.jpeg" alt="Ignacio Recabarren" />
+        </div>
       </div>
     </section>
 
     <section id="about" class="reveal">
-      <div class="section-title">About</div>
-      <p>
-        I am a Full Stack Developer with more than 8 years of experience
-        designing and building scalable enterprise web applications. My
-        expertise lies in Angular, React, TypeScript and SPA architecture, where I
-        focus on modular development, performance optimization and
-        maintainability. Throughout my career, I have collaborated closely with
-        backend teams working with Java, .NET and RESTful APIs, ensuring clean
-        contracts and efficient data flows. I am experienced in Agile Scrum
-        environments, CI/CD pipelines and cloud-based deployments using AWS and
-        Azure. I bring strong analytical thinking, structured problem-solving
-        and a deep commitment to writing clean, scalable and production-ready
-        code.
-      </p>
+      <div class="section-inner">
+        <div class="section-title">About Me</div>
+        <p class="section-text">
+          Full Stack Developer specialized in Angular and scalable SPA
+          architectures. Strong backend foundations in Java and .NET. Passionate
+          about clean architecture, performance optimization and building
+          production-ready software.
+        </p>
+      </div>
     </section>
 
     <section id="experience" class="reveal">
-      <div class="section-title">Experience</div>
+      <div class="section-inner">
+        <div class="section-title">Experience</div>
 
-      <div class="experience-item">
-        <h3>Onetree — Full Stack Developer</h3>
-        <span>June 2019 — February 2026</span>
-        <p>
-          Development of Angular applications integrated
-          with RESTful APIs. Designed reusable modular frontend architecture,
-          improving scalability and maintainability across multiple projects.
-          Implemented authentication and authorization flows connected to
-          backend services. Collaborated with backend teams defining API
-          contracts and optimizing data structures. Participated in CI/CD
-          processe and Agile Scrum ceremonies within
-          software factory environments. Contributed to performance
-          improvements, reducing bundle size and optimizing rendering cycles.
-        </p>
-      </div>
+        <div class="card">
+          <h3>Onetree — Full Stack Developer</h3>
+          <span>2019 — 2026</span>
+          <p>
+            Designed and developed modular Angular applications integrated with
+            REST APIs. Led architecture improvements, optimized performance and
+            collaborated in Agile teams.
+          </p>
+        </div>
 
-      <div class="experience-item">
-        <h3>Freelance — Backend & Full Stack Developer</h3>
-        <span>January 2017 — February 2018</span>
-        <p>
-          Developed backend applications using Java 8 and relational databases.
-          Designed RESTful APIs following MVC architecture principles. Modeled
-          relational database schemas and optimized SQL queries for performance.
-          Implemented authentication mechanisms and role-based access control.
-          Delivered scalable backend services ready for frontend integrations.
-        </p>
-      </div>
+        <div class="card">
+          <h3>Freelance — Full Stack Develope</h3>
+          <span>2017 — 2018</span>
+          <p>
+            Built Java-based backend systems, REST APIs and relational database
+            models. Delivered scalable solutions for business clients.
+          </p>
+        </div>
 
-      <div class="experience-item">
-        <h3>ITsynch — Full Stack Developer</h3>
-        <span>January 2016 — February 2017</span>
-        <p>
-          Worked on web applications using .NET Framework and Angular within MVC
-          architecture. Developed frontend modules and backend services ensuring
-          system consistency. Integrated SQL Server databases and performed
-          maintenance tasks. Collaborated in cross-functional teams delivering
-          enterprise solutions.
-        </p>
+        <div class="card">
+          <h3>ITsynch — Full Stack Develope</h3>
+          <span>2016 — 2017</span>
+          <p>
+            Worked on web applications using .NET Framework and Angular within
+            MVC architecture. Developed frontend modules and backend services
+            ensuring system consistency. Integrated SQL Server databases and
+            performed maintenance tasks. Collaborated in cross-functional teams
+            delivering enterprise solutions.
+          </p>
+        </div>
       </div>
     </section>
 
     <section id="skills" class="reveal">
-      <div class="section-title">Core Skills</div>
-
-      <div class="skills-grid">
-        <div class="skill">Angular</div>
-        <div class="skill">React</div>
-        <div class="skill">TypeScript</div>
-        <div class="skill">RxJS</div>
-        <div class="skill">SPA Development</div>
-        <div class="skill">HTML</div>
-        <div class="skill">CSS</div>
-        <div class="skill">REST API</div>
-        <div class="skill">PHP</div>
-        <div class="skill">Java 8</div>
-        <div class="skill">.NET Framework</div>
-        <div class="skill">MVC Architecture</div>
-        <div class="skill">PostgreSQL</div>
-        <div class="skill">SQL Server</div>
-        <div class="skill">Docker</div>
-        <div class="skill">Git</div>
-        <div class="skill">CI/CD Pipelines</div>
-        <div class="skill">AWS</div>
-        <div class="skill">Microsoft Azure</div>
-        <div class="skill">Agile Scrum</div>
+      <div class="section-inner">
+        <div class="section-title">Core Skills</div>
+        <div class="skills">
+          <div class="skill">Angular</div>
+          <div class="skill">TypeScript</div>
+          <div class="skill">RxJS</div>
+          <div class="skill">React</div>
+          <div class="skill">Java</div>
+          <div class="skill">.NET</div>
+          <div class="skill">REST APIs</div>
+          <div class="skill">Docker</div>
+          <div class="skill">AWS</div>
+          <div class="skill">Azure</div>
+        </div>
       </div>
     </section>
 
-    <section id="education" class="reveal">
-      <div class="section-title">Education</div>
-      <div class="education">
-        <p>
-          <strong>Systems Analyst</strong> — Universidad Tecnológica Nacional
-          (UTN) — Graduated
-        </p>
-        <p>
-          <strong>Systems Engineering</strong> — Universidad Tecnológica
-          Nacional (UTN) — Incomplete
+    <section id="contact" class="reveal">
+      <div class="section-inner">
+        <div class="section-title">Let's Connect</div>
+        <p class="section-text">
+          Concepción del Uruguay, Argentina<br />
+          recabarren.igna@gmail.com<br />
+          LinkedIn: linkedin.com/in/ignacio-recabarren
         </p>
       </div>
-    </section>
-
-    <section id="languages" class="reveal">
-      <div class="section-title">Languages</div>
-      <div class="languages">
-        <p>Spanish — Native</p>
-        <p>English — B2 (Upper Intermediate)</p>
-        <p>Portuguese — Basic</p>
-      </div>
-    </section>
-
-    <section id="contact" class="contact reveal">
-      <div class="section-title">Let's Connect</div>
-      <p>Concepción del Uruguay, Entre Ríos, Argentina</p>
-      <p>recabarren.igna@gmail.com</p>
-      <p>+54 9 3442 507430</p>
-      <a href="https://linkedin.com/in/ignacio-recabarren" target="_blank"
-        >LinkedIn</a
-      >
-      <a href="https://github.com/nachoreca" target="_blank">GitHub</a>
     </section>
 
     <footer>© 2026 Ignacio Recabarren</footer>
@@ -366,6 +455,31 @@
         });
       }
       window.addEventListener("scroll", revealOnScroll);
+      revealOnScroll();
+
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)",
+      ).matches;
+      if (
+        localStorage.getItem("theme") === "dark" ||
+        (!localStorage.getItem("theme") && prefersDark)
+      ) {
+        document.body.classList.add("dark");
+      }
+
+      document.getElementById("themeToggle").addEventListener("click", () => {
+        document.body.classList.toggle("dark");
+        localStorage.setItem(
+          "theme",
+          document.body.classList.contains("dark") ? "dark" : "light",
+        );
+      });
+
+      window.addEventListener("scroll", () => {
+        document
+          .getElementById("navbar")
+          .classList.toggle("scrolled", window.scrollY > 50);
+      });
     </script>
   </body>
 </html>
