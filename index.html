@@ -1,485 +1,490 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Ignacio Recabarren</title>
-    <meta
-      name="description"
-      content="Senior Full Stack Developer specialized in Angular, TypeScript and scalable enterprise web applications."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
+  <title>Ignacio Recabarren</title>
+  <meta name="description"
+    content="Senior Full Stack Developer specialized in Angular, TypeScript and scalable enterprise web applications." />
 
-    <style>
-      :root {
-        --bg: #ffffff;
-        --text: #0f172a;
-        --secondary: #64748b;
-        --card: #f8fafc;
-        --border: #e2e8f0;
-        --accent: linear-gradient(135deg, #6366f1, #06b6d4);
-      }
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet" />
 
-      body.dark {
-        --bg: #0b0f19;
-        --text: #f1f5f9;
-        --secondary: #94a3b8;
-        --card: #111827;
-        --border: #1f2937;
-      }
+  <style>
+    :root {
+      --bg: #ffffff;
+      --text: #0f172a;
+      --secondary: #64748b;
+      --card: #f8fafc;
+      --border: #e2e8f0;
+      --accent: linear-gradient(135deg, #6366f1, #06b6d4);
+    }
 
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-      }
-      html {
-        scroll-behavior: smooth;
-      }
-      body {
-        font-family: "Inter", sans-serif;
-        background: var(--bg);
-        color: var(--text);
-        transition: all 0.4s ease;
-        -webkit-font-smoothing: antialiased;
-      }
+    body.dark {
+      --bg: #0b0f19;
+      --text: #f1f5f9;
+      --secondary: #94a3b8;
+      --card: #111827;
+      --border: #1f2937;
+    }
 
-      /* NAV */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-      nav {
-        position: fixed;
-        width: 100%;
-        top: 0;
-        backdrop-filter: blur(20px);
-        background: rgba(255, 255, 255, 0.6);
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 20px 40px;
-        z-index: 1000;
-        transition: 0.3s ease;
-        border-bottom: 1px solid var(--border);
-      }
+    html {
+      scroll-behavior: smooth;
+    }
 
-      body.dark nav {
-        background: rgba(10, 15, 25, 0.6);
-      }
+    body {
+      font-family: "Inter", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      transition: all 0.4s ease;
+      -webkit-font-smoothing: antialiased;
+    }
 
-      nav.scrolled {
-        padding: 14px 40px;
+    /* NAV */
+
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      backdrop-filter: blur(20px);
+      background: rgba(255, 255, 255, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      z-index: 1000;
+      transition: 0.3s ease;
+      border-bottom: 1px solid var(--border);
+    }
+
+    body.dark nav {
+      background: rgba(10, 15, 25, 0.6);
+    }
+
+    nav.scrolled {
+      padding: 14px 40px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text);
+      margin-left: 30px;
+      font-weight: 500;
+      font-size: 14px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 0.6;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+    }
+
+    #themeToggle {
+      margin-left: 25px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      font-size: 18px;
+      color: var(--text);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px;
+    }
+
+    .hero-container {
+      max-width: 1200px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 100px;
+      flex-wrap: wrap;
+    }
+
+    .hero-left {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero h1 {
+      font-size: clamp(40px, 6vw, 72px);
+      font-weight: 900;
+      line-height: 1.05;
+      background: var(--accent);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .hero h2 {
+      font-size: clamp(18px, 2vw, 24px);
+      margin-top: 25px;
+      color: var(--secondary);
+    }
+
+    .hero p {
+      margin-top: 25px;
+      font-size: 18px;
+      line-height: 1.7;
+      color: var(--secondary);
+    }
+
+    .cta {
+      margin-top: 40px;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 14px 28px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      text-decoration: none;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
+    }
+
+    .btn-outline {
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .btn-outline:hover {
+      background: var(--card);
+    }
+
+    /* IMAGE */
+
+    .hero-image {
+      flex: 1;
+      min-width: 260px;
+      max-width: 400px;
+      aspect-ratio: 4/5;
+      border-radius: 30px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero-image::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: var(--accent);
+      filter: blur(40px);
+      z-index: -1;
+      opacity: 0.4;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 30px;
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 140px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .section-inner {
+      max-width: 1000px;
+      width: 100%;
+    }
+
+    .section-title {
+      font-size: 40px;
+      font-weight: 800;
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .section-text {
+      text-align: center;
+      color: var(--secondary);
+      font-size: 18px;
+      line-height: 1.8;
+    }
+
+    /* EXPERIENCE CARDS */
+
+    .card {
+      background: var(--card);
+      padding: 40px;
+      border-radius: 25px;
+      margin-bottom: 40px;
+      transition: 0.3s ease;
+      border: 1px solid var(--border);
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+    }
+
+    .card h3 {
+      font-size: 20px;
+      margin-bottom: 10px;
+    }
+
+    .card span {
+      color: var(--secondary);
+      font-size: 14px;
+    }
+
+    .card p {
+      margin-top: 15px;
+      color: var(--secondary);
+      line-height: 1.7;
+    }
+
+    /* SKILLS */
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 20px;
+    }
+
+    .skill {
+      background: var(--card);
+      padding: 20px;
+      border-radius: 15px;
+      text-align: center;
+      font-weight: 500;
+      border: 1px solid var(--border);
+      transition: 0.3s ease;
+    }
+
+    .skill:hover {
+      transform: translateY(-5px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      padding: 80px 0;
+      color: var(--secondary);
+    }
+
+    /* ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: 1s ease;
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 900px) {
+      .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 60px;
       }
 
       nav a {
-        text-decoration: none;
-        color: var(--text);
-        margin-left: 30px;
-        font-weight: 500;
-        font-size: 14px;
-        transition: 0.3s;
+        display: none;
       }
-      nav a:hover {
-        opacity: 0.6;
-      }
+    }
+  </style>
+</head>
 
-      .nav-right {
-        display: flex;
-        align-items: center;
-      }
+<body>
+  <nav id="navbar">
+    <div><strong>IR</strong></div>
+    <div class="nav-right">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+      <button id="themeToggle">🌙</button>
+    </div>
+  </nav>
 
-      #themeToggle {
-        margin-left: 25px;
-        cursor: pointer;
-        background: none;
-        border: none;
-        font-size: 18px;
-        color: var(--text);
-      }
-
-      /* HERO */
-
-      .hero {
-        min-height: 100vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        padding: 0 20px;
-      }
-
-      .hero-container {
-        max-width: 1200px;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        gap: 100px;
-        flex-wrap: wrap;
-      }
-
-      .hero-left {
-        flex: 1;
-        min-width: 300px;
-      }
-
-      .hero h1 {
-        font-size: clamp(40px, 6vw, 72px);
-        font-weight: 900;
-        line-height: 1.05;
-        background: var(--accent);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-      }
-
-      .hero h2 {
-        font-size: clamp(18px, 2vw, 24px);
-        margin-top: 25px;
-        color: var(--secondary);
-      }
-
-      .hero p {
-        margin-top: 25px;
-        font-size: 18px;
-        line-height: 1.7;
-        color: var(--secondary);
-      }
-
-      .cta {
-        margin-top: 40px;
-        display: flex;
-        gap: 20px;
-        flex-wrap: wrap;
-      }
-
-      .btn {
-        padding: 14px 28px;
-        border-radius: 999px;
-        font-weight: 600;
-        font-size: 14px;
-        cursor: pointer;
-        transition: 0.3s ease;
-        text-decoration: none;
-      }
-
-      .btn-primary {
-        background: var(--accent);
-        color: white;
-      }
-
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 10px 30px rgba(99, 102, 241, 0.4);
-      }
-
-      .btn-outline {
-        border: 1px solid var(--border);
-        color: var(--text);
-      }
-
-      .btn-outline:hover {
-        background: var(--card);
-      }
-
-      /* IMAGE */
-
-      .hero-image {
-        flex: 1;
-        min-width: 260px;
-        max-width: 400px;
-        aspect-ratio: 4/5;
-        border-radius: 30px;
-        overflow: hidden;
-        position: relative;
-      }
-
-      .hero-image::before {
-        content: "";
-        position: absolute;
-        inset: -2px;
-        background: var(--accent);
-        filter: blur(40px);
-        z-index: -1;
-        opacity: 0.4;
-      }
-
-      .hero-image img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 30px;
-      }
-
-      /* SECTIONS */
-
-      section {
-        padding: 140px 20px;
-        display: flex;
-        justify-content: center;
-      }
-
-      .section-inner {
-        max-width: 1000px;
-        width: 100%;
-      }
-
-      .section-title {
-        font-size: 40px;
-        font-weight: 800;
-        text-align: center;
-        margin-bottom: 60px;
-      }
-
-      .section-text {
-        text-align: center;
-        color: var(--secondary);
-        font-size: 18px;
-        line-height: 1.8;
-      }
-
-      /* EXPERIENCE CARDS */
-
-      .card {
-        background: var(--card);
-        padding: 40px;
-        border-radius: 25px;
-        margin-bottom: 40px;
-        transition: 0.3s ease;
-        border: 1px solid var(--border);
-      }
-
-      .card:hover {
-        transform: translateY(-8px);
-      }
-
-      .card h3 {
-        font-size: 20px;
-        margin-bottom: 10px;
-      }
-
-      .card span {
-        color: var(--secondary);
-        font-size: 14px;
-      }
-
-      .card p {
-        margin-top: 15px;
-        color: var(--secondary);
-        line-height: 1.7;
-      }
-
-      /* SKILLS */
-
-      .skills {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 20px;
-      }
-
-      .skill {
-        background: var(--card);
-        padding: 20px;
-        border-radius: 15px;
-        text-align: center;
-        font-weight: 500;
-        border: 1px solid var(--border);
-        transition: 0.3s ease;
-      }
-      .skill:hover {
-        transform: translateY(-5px);
-      }
-
-      /* FOOTER */
-
-      footer {
-        text-align: center;
-        padding: 80px 0;
-        color: var(--secondary);
-      }
-
-      /* ANIMATION */
-
-      .reveal {
-        opacity: 0;
-        transform: translateY(40px);
-        transition: 1s ease;
-      }
-      .reveal.active {
-        opacity: 1;
-        transform: translateY(0);
-      }
-
-      /* MOBILE */
-
-      @media (max-width: 900px) {
-        .hero-container {
-          flex-direction: column-reverse;
-          text-align: center;
-          gap: 60px;
-        }
-        nav a {
-          display: none;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <nav id="navbar">
-      <div><strong>IR</strong></div>
-      <div class="nav-right">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-        <button id="themeToggle">🌙</button>
-      </div>
-    </nav>
-
-    <section class="hero">
-      <div class="hero-container">
-        <div class="hero-left">
-          <h1>Ignacio Recabarren</h1>
-          <h2>Semi-Senior Full Stack Developer</h2>
-          <p>
-            I build scalable, maintainable and high-performance web
-            applications. 8+ years delivering enterprise solutions with Angular, React,
-            TypeScript and modern backend ecosystems as .NET, NodeJS and Java
-          </p>
-          <div class="cta">
-            <a href="#contact" class="btn btn-primary">Contact Me</a>
-            <a
-              href="https://github.com/nachoreca"
-              target="_blank"
-              class="btn btn-outline"
-              >View GitHub</a
-            >
-          </div>
-        </div>
-        <div class="hero-image">
-          <img src="./profile.jpeg" alt="Ignacio Recabarren" />
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-left">
+        <h1>Ignacio Recabarren</h1>
+        <h2>Semi-Senior Full Stack Developer</h2>
+        <p>
+          I build scalable, maintainable and high-performance web
+          applications. 8+ years delivering enterprise solutions with Angular, React,
+          TypeScript and modern backend ecosystems as .NET, NodeJS and Java.
+        </p>
+        <div class="cta">
+          <a href="#contact" class="btn btn-primary">Contact Me</a>
+          <a href="https://github.com/nachoreca" target="_blank" class="btn btn-outline">View GitHub</a>
         </div>
       </div>
-    </section>
+      <div class="hero-image">
+        <img src="./profile.jpeg" alt="Ignacio Recabarren" />
+      </div>
+    </div>
+  </section>
 
-    <section id="about" class="reveal">
-      <div class="section-inner">
-        <div class="section-title">About Me</div>
-        <p class="section-text">
-          Full Stack Developer specialized in Angular and React frameworks for the frontend. 
-          Strong backend foundations in NodeJS, Java and .NET. Passionate
-          about clean architecture, SOLID principles, performance optimization and building
-          production-ready software.
+  <section id="about" class="reveal">
+    <div class="section-inner">
+      <div class="section-title">About Me</div>
+      <p class="section-text">
+        Full Stack Developer specialized in Angular and React frameworks for the frontend.
+        Strong backend foundations in NodeJS, Java and .NET. Passionate
+        about clean architecture, SOLID principles, performance optimization and building
+        production-ready software.
+      </p>
+    </div>
+  </section>
+
+  <section id="experience" class="reveal">
+    <div class="section-inner">
+      <div class="section-title">Experience</div>
+
+      <div class="card">
+        <h3>Onetree — Full Stack Developer</h3>
+        <span>2019 — 2026</span>
+        <p>
+        <p>
+          Designed and developed modular Angular applications integrated with REST APIs.
+          Led frontend architecture improvements, optimized performance and collaborated
+          in Agile cross-functional teams. Contributed to backend and enterprise projects
+          using .NET APIs, Razor MVC and Azure Power Apps, and worked with headless CMS
+          solutions such as Directus (including custom extensions). Experienced with
+          Dockerized environments and relational databases including PostgreSQL and
+          Microsoft SQL Server.
+        </p>
         </p>
       </div>
-    </section>
 
-    <section id="experience" class="reveal">
-      <div class="section-inner">
-        <div class="section-title">Experience</div>
-
-        <div class="card">
-          <h3>Onetree — Full Stack Developer</h3>
-          <span>2019 — 2026</span>
-          <p>
-            Designed and developed modular Angular applications integrated with
-            REST APIs. Led architecture improvements, optimized performance and
-            collaborated in Agile teams.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>Freelance — Full Stack Develope</h3>
-          <span>2017 — 2018</span>
-          <p>
-            Built Java-based backend systems, REST APIs and relational database
-            models. Delivered scalable solutions for business clients.
-          </p>
-        </div>
-
-        <div class="card">
-          <h3>ITsynch — Full Stack Develope</h3>
-          <span>2016 — 2017</span>
-          <p>
-            Worked on web applications using .NET Framework and Angular within
-            MVC architecture. Developed frontend modules and backend services
-            ensuring system consistency. Integrated SQL Server databases and
-            performed maintenance tasks. Collaborated in cross-functional teams
-            delivering enterprise solutions.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills" class="reveal">
-      <div class="section-inner">
-        <div class="section-title">Core Skills</div>
-        <div class="skills">
-          <div class="skill">Angular</div>
-          <div class="skill">TypeScript</div>
-          <div class="skill">RxJS</div>
-          <div class="skill">React</div>
-          <div class="skill">Java</div>
-          <div class="skill">.NET</div>
-          <div class="skill">REST APIs</div>
-          <div class="skill">Docker</div>
-          <div class="skill">AWS</div>
-          <div class="skill">Azure</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="reveal">
-      <div class="section-inner">
-        <div class="section-title">Let's Connect</div>
-        <p class="section-text">
-          Concepción del Uruguay, Argentina<br />
-          recabarren.igna@gmail.com<br />
-          LinkedIn: linkedin.com/in/ignacio-recabarren
+      <div class="card">
+        <h3>Freelance — Full Stack Develope</h3>
+        <span>2017 — 2018</span>
+        <p>
+          Built Java-based backend systems, REST APIs and relational database
+          models. Delivered scalable solutions for business clients.
         </p>
       </div>
-    </section>
 
-    <footer>© 2026 Ignacio Recabarren</footer>
+      <div class="card">
+        <h3>ITsynch — Full Stack Develope</h3>
+        <span>2016 — 2017</span>
+        <p>
+          Worked on web applications using .NET Framework and Angular within
+          MVC architecture. Developed frontend modules and backend services
+          ensuring system consistency. Integrated SQL Server databases and
+          performed maintenance tasks. Collaborated in cross-functional teams
+          delivering enterprise solutions.
+        </p>
+      </div>
+    </div>
+  </section>
 
-    <script>
-      const reveals = document.querySelectorAll(".reveal");
-      function revealOnScroll() {
-        const windowHeight = window.innerHeight;
-        reveals.forEach((el) => {
-          const elementTop = el.getBoundingClientRect().top;
-          if (elementTop < windowHeight - 100) {
-            el.classList.add("active");
-          }
-        });
-      }
-      window.addEventListener("scroll", revealOnScroll);
-      revealOnScroll();
+  <section id="skills" class="reveal">
+    <div class="section-inner">
+      <div class="section-title">Core Skills</div>
+      <div class="skills">
+        <div class="skill">Angular</div>
+        <div class="skill">TypeScript</div>
+        <div class="skill">RxJS</div>
+        <div class="skill">React</div>
+        <div class="skill">Java</div>
+        <div class="skill">.NET</div>
+        <div class="skill">REST APIs</div>
+        <div class="skill">Docker</div>
+        <div class="skill">AWS</div>
+        <div class="skill">Azure</div>
+      </div>
+    </div>
+  </section>
 
-      const prefersDark = window.matchMedia(
-        "(prefers-color-scheme: dark)",
-      ).matches;
-      if (
-        localStorage.getItem("theme") === "dark" ||
-        (!localStorage.getItem("theme") && prefersDark)
-      ) {
-        document.body.classList.add("dark");
-      }
+  <section id="contact" class="reveal">
+    <div class="section-inner">
+      <div class="section-title">Let's Connect</div>
+      <p class="section-text">
+        Concepción del Uruguay, Argentina<br />
+        recabarren.igna@gmail.com<br />
+        LinkedIn: linkedin.com/in/ignacio-recabarren
+      </p>
+    </div>
+  </section>
 
-      document.getElementById("themeToggle").addEventListener("click", () => {
-        document.body.classList.toggle("dark");
-        localStorage.setItem(
-          "theme",
-          document.body.classList.contains("dark") ? "dark" : "light",
-        );
+  <footer>© 2026 Ignacio Recabarren</footer>
+
+  <script>
+    const reveals = document.querySelectorAll(".reveal");
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      reveals.forEach((el) => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add("active");
+        }
       });
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
 
-      window.addEventListener("scroll", () => {
-        document
-          .getElementById("navbar")
-          .classList.toggle("scrolled", window.scrollY > 50);
-      });
-    </script>
-  </body>
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    if (
+      localStorage.getItem("theme") === "dark" ||
+      (!localStorage.getItem("theme") && prefersDark)
+    ) {
+      document.body.classList.add("dark");
+    }
+
+    document.getElementById("themeToggle").addEventListener("click", () => {
+      document.body.classList.toggle("dark");
+      localStorage.setItem(
+        "theme",
+        document.body.classList.contains("dark") ? "dark" : "light",
+      );
+    });
+
+    window.addEventListener("scroll", () => {
+      document
+        .getElementById("navbar")
+        .classList.toggle("scrolled", window.scrollY > 50);
+    });
+  </script>
+</body>
+
 </html>
