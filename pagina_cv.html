@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Ignacio Recabarren | Full Stack Developer</title>
+    <meta
+      name="description"
+      content="Ignacio Recabarren - Senior Full Stack Developer specialized in Angular, TypeScript and scalable enterprise web applications."
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background: #fff;
+        color: #111;
+        -webkit-font-smoothing: antialiased;
+      }
+      section {
+        padding: 160px 10%;
+        position: relative;
+      }
+      nav {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(20px);
+        display: flex;
+        justify-content: space-between;
+        padding: 20px 10%;
+        z-index: 1000;
+      }
+      nav a {
+        text-decoration: none;
+        color: #111;
+        margin-left: 40px;
+        font-weight: 500;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        transition: 0.3s;
+      }
+      nav a:hover {
+        opacity: 0.5;
+      }
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .hero-left {
+        max-width: 650px;
+      }
+      .hero h1 {
+        font-size: 80px;
+        font-weight: 800;
+        line-height: 1.1;
+      }
+      .hero h2 {
+        font-size: 28px;
+        font-weight: 500;
+        margin-top: 30px;
+        color: #666;
+      }
+      .hero p {
+        margin-top: 30px;
+        font-size: 20px;
+        color: #777;
+        line-height: 1.6;
+      }
+      .hero-image {
+        width: 380px;
+        height: 480px;
+        background: #f5f5f7;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #aaa;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.08);
+        overflow: hidden;
+      }
+      .section-title {
+        font-size: 48px;
+        font-weight: 700;
+        margin-bottom: 80px;
+        text-align: center;
+      }
+      .about p {
+        max-width: 950px;
+        margin: auto;
+        font-size: 22px;
+        line-height: 1.8;
+        color: #444;
+        text-align: center;
+      }
+      .experience-item {
+        max-width: 850px;
+        margin: 0 auto 120px auto;
+      }
+      .experience-item h3 {
+        font-size: 26px;
+        font-weight: 600;
+      }
+      .experience-item span {
+        display: block;
+        margin: 15px 0;
+        color: #888;
+      }
+      .experience-item p {
+        font-size: 18px;
+        color: #555;
+        line-height: 1.8;
+      }
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+        gap: 25px;
+        max-width: 1000px;
+        margin: auto;
+      }
+      .skill {
+        background: #f5f5f7;
+        padding: 30px;
+        text-align: center;
+        border-radius: 20px;
+        font-weight: 500;
+        transition: 0.4s ease;
+      }
+      .skill:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+      }
+      .education,
+      .languages {
+        max-width: 800px;
+        margin: auto;
+        text-align: center;
+      }
+      .education p,
+      .languages p {
+        font-size: 20px;
+        color: #555;
+        margin: 15px 0;
+      }
+      .contact {
+        text-align: center;
+      }
+      .contact p {
+        font-size: 20px;
+        margin: 15px 0;
+        color: #555;
+      }
+      .contact a {
+        display: inline-block;
+        margin: 20px 20px 0 20px;
+        text-decoration: none;
+        font-weight: 600;
+        color: #111;
+        border-bottom: 1px solid #ccc;
+        transition: 0.3s;
+      }
+      .contact a:hover {
+        border-bottom: 1px solid #111;
+      }
+      footer {
+        text-align: center;
+        padding: 80px 0;
+        color: #aaa;
+        font-size: 14px;
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(60px);
+        transition: 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+
+  <body>
+    <nav>
+      <div><strong>IR</strong></div>
+      <div>
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Ignacio Recabarren</h1>
+        <h2>Senior Full Stack Developer — Angular Specialist</h2>
+        <p>
+          I build scalable, maintainable and high-performance web applications
+          with over 8 years of professional experience. Specialized in Angular
+          and TypeScript, with strong backend foundations in Java and .NET.
+          Focused on clean architecture, modular design and long-term product
+          scalability.
+        </p>
+      </div>
+
+      <div class="hero-image">
+        <img
+          src="profile.jpeg"
+          style="width: 100%; height: 100%; object-fit: cover"
+        />
+      </div>
+    </section>
+
+    <section id="about" class="reveal">
+      <div class="section-title">About</div>
+      <p>
+        I am a Full Stack Developer with more than 8 years of experience
+        designing and building scalable enterprise web applications. My
+        expertise lies in Angular, TypeScript and SPA architecture, where I
+        focus on modular development, performance optimization and
+        maintainability. Throughout my career, I have collaborated closely with
+        backend teams working with Java, .NET and RESTful APIs, ensuring clean
+        contracts and efficient data flows. I am experienced in Agile Scrum
+        environments, CI/CD pipelines and cloud-based deployments using AWS and
+        Azure. I bring strong analytical thinking, structured problem-solving
+        and a deep commitment to writing clean, scalable and production-ready
+        code.
+      </p>
+    </section>
+
+    <section id="experience" class="reveal">
+      <div class="section-title">Experience</div>
+
+      <div class="experience-item">
+        <h3>Onetree — Full Stack Developer</h3>
+        <span>June 2019 — February 2026</span>
+        <p>
+          Development of Angular applications integrated
+          with RESTful APIs. Designed reusable modular frontend architecture,
+          improving scalability and maintainability across multiple projects.
+          Implemented authentication and authorization flows connected to
+          backend services. Collaborated with backend teams defining API
+          contracts and optimizing data structures. Participated in CI/CD
+          processe and Agile Scrum ceremonies within
+          software factory environments. Contributed to performance
+          improvements, reducing bundle size and optimizing rendering cycles.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>Freelance — Backend & Full Stack Developer</h3>
+        <span>January 2017 — February 2018</span>
+        <p>
+          Developed backend applications using Java 8 and relational databases.
+          Designed RESTful APIs following MVC architecture principles. Modeled
+          relational database schemas and optimized SQL queries for performance.
+          Implemented authentication mechanisms and role-based access control.
+          Delivered scalable backend services ready for frontend integrations.
+        </p>
+      </div>
+
+      <div class="experience-item">
+        <h3>ITsysnch — Full Stack Developer</h3>
+        <span>January 2016 — February 2017</span>
+        <p>
+          Worked on web applications using .NET Framework and Angular within MVC
+          architecture. Developed frontend modules and backend services ensuring
+          system consistency. Integrated SQL Server databases and performed
+          maintenance tasks. Collaborated in cross-functional teams delivering
+          enterprise solutions.
+        </p>
+      </div>
+    </section>
+
+    <section id="skills" class="reveal">
+      <div class="section-title">Core Skills</div>
+
+      <div class="skills-grid">
+        <div class="skill">Angular</div>
+        <div class="skill">React</div>
+        <div class="skill">TypeScript</div>
+        <div class="skill">RxJS</div>
+        <div class="skill">SPA Development</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">REST API</div>
+        <div class="skill">PHP</div>
+        <div class="skill">Java 8</div>
+        <div class="skill">.NET Framework</div>
+        <div class="skill">MVC Architecture</div>
+        <div class="skill">PostgreSQL</div>
+        <div class="skill">SQL Server</div>
+        <div class="skill">Docker</div>
+        <div class="skill">Git</div>
+        <div class="skill">CI/CD Pipelines</div>
+        <div class="skill">AWS</div>
+        <div class="skill">Microsoft Azure</div>
+        <div class="skill">Agile Scrum</div>
+      </div>
+    </section>
+
+    <section id="education" class="reveal">
+      <div class="section-title">Education</div>
+      <div class="education">
+        <p>
+          <strong>Systems Analyst</strong> — Universidad Tecnológica Nacional
+          (UTN) — Graduated
+        </p>
+        <p>
+          <strong>Systems Engineering</strong> — Universidad Tecnológica
+          Nacional (UTN) — Incomplete
+        </p>
+      </div>
+    </section>
+
+    <section id="languages" class="reveal">
+      <div class="section-title">Languages</div>
+      <div class="languages">
+        <p>Spanish — Native</p>
+        <p>English — B2 (Upper Intermediate)</p>
+        <p>Portuguese — Basic</p>
+      </div>
+    </section>
+
+    <section id="contact" class="contact reveal">
+      <div class="section-title">Let's Connect</div>
+      <p>Concepción del Uruguay, Argentina</p>
+      <p>recabarren.igna@gmail.com</p>
+      <p>+54 9 3442 507430</p>
+      <a href="https://linkedin.com/in/ignacio-recabarren" target="_blank"
+        >LinkedIn</a
+      >
+      <a href="https://github.com/nachoreca" target="_blank">GitHub</a>
+    </section>
+
+    <footer>© 2026 Ignacio Recabarren</footer>
+
+    <script>
+      const reveals = document.querySelectorAll(".reveal");
+      function revealOnScroll() {
+        const windowHeight = window.innerHeight;
+        reveals.forEach((el) => {
+          const elementTop = el.getBoundingClientRect().top;
+          if (elementTop < windowHeight - 100) {
+            el.classList.add("active");
+          }
+        });
+      }
+      window.addEventListener("scroll", revealOnScroll);
+    </script>
+  </body>
+</html>
