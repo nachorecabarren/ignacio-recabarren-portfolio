@@ -7,7 +7,7 @@
 
   <title>Ignacio Recabarren</title>
   <meta name="description"
-    content="Senior Full Stack Developer specialized in Angular, TypeScript and scalable enterprise web applications." />
+    content="Senior Full Stack Developer specialized in Angular, TypeScript, .NET, NodeJS and scalable enterprise web applications." />
 
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
     rel="stylesheet" />
@@ -269,7 +269,54 @@
       line-height: 1.7;
     }
 
+    .card .tags {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .card .tags span {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 12px;
+      color: var(--text);
+    }
+
+    .card .links {
+      margin-top: 18px;
+      display: flex;
+      gap: 16px;
+    }
+
+    .card .links a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #6366f1;
+      text-decoration: none;
+    }
+
+    .card .links a:hover {
+      text-decoration: underline;
+    }
+
     /* SKILLS */
+
+    .skills-group {
+      margin-bottom: 40px;
+    }
+
+    .skills-group h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--secondary);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 18px;
+      text-align: center;
+    }
 
     .skills {
       display: grid;
@@ -334,6 +381,7 @@
     <div class="nav-right">
       <a href="#about">About</a>
       <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
       <a href="#skills">Skills</a>
       <a href="#contact">Contact</a>
       <button id="themeToggle">🌙</button>
@@ -344,7 +392,7 @@
     <div class="hero-container">
       <div class="hero-left">
         <h1>Ignacio Recabarren</h1>
-        <h2>Semi-Senior Full Stack Developer</h2>
+        <h2>Senior Full Stack Developer</h2>
         <p>
           I build scalable, maintainable and high-performance web
           applications. 8+ years delivering enterprise solutions with Angular, React,
@@ -367,7 +415,7 @@
       <p class="section-text">
         Full Stack Developer specialized in Angular and React frameworks for the frontend.
         Strong backend foundations in NodeJS, Java and .NET. Passionate
-        about clean architecture, SOLID principles, performance optimization and building
+        about Clean Architecture, DDD, SOLID principles, performance optimization and building
         production-ready software.
       </p>
     </div>
@@ -378,9 +426,26 @@
       <div class="section-title">Experience</div>
 
       <div class="card">
+        <h3>Netrix LLC — Full Stack Developer</h3>
+        <span>Jul 2026 — Present</span>
+        <p>
+          Migrated a legacy .NET and ASMX project to Angular 22, introducing a
+          dedicated API module to handle HTTP requests from the new Angular frontend.
+          Services and repositories were structured to reuse existing, proven business
+          logic, minimizing risk while modernizing the presentation layer.
+        </p>
+        <div class="tags">
+          <span>Angular 22</span>
+          <span>Signals</span>
+          <span>.NET</span>
+          <span>SQL Server</span>
+          <span>ag-Grid</span>
+        </div>
+      </div>
+
+      <div class="card">
         <h3>Onetree — Full Stack Developer</h3>
         <span>2019 — 2026</span>
-        <p>
         <p>
           Designed and developed modular Angular applications integrated with REST APIs.
           Led frontend architecture improvements, optimized performance and collaborated
@@ -389,7 +454,6 @@
           solutions such as Directus (including custom extensions). Experienced with
           Dockerized environments and relational databases including PostgreSQL and
           Microsoft SQL Server.
-        </p>
         </p>
       </div>
 
@@ -416,34 +480,7 @@
     </div>
   </section>
 
-  <section id="skills" class="reveal">
-    <div class="section-inner">
-      <div class="section-title">Core Skills</div>
-      <div class="skills">
-        <div class="skill">Angular</div>
-        <div class="skill">TypeScript</div>
-        <div class="skill">RxJS</div>
-        <div class="skill">React</div>
-        <div class="skill">Java</div>
-        <div class="skill">.NET</div>
-        <div class="skill">REST APIs</div>
-        <div class="skill">Docker</div>
-        <div class="skill">AWS</div>
-        <div class="skill">Azure</div>
-      </div>
-    </div>
-  </section>
 
-  <section id="contact" class="reveal">
-    <div class="section-inner">
-      <div class="section-title">Let's Connect</div>
-      <p class="section-text">
-        Concepción del Uruguay, Argentina<br />
-        recabarren.igna@gmail.com<br />
-        LinkedIn: linkedin.com/in/ignacio-recabarren
-      </p>
-    </div>
-  </section>
 
   <footer>© 2026 Ignacio Recabarren</footer>
 
